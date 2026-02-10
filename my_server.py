@@ -15,7 +15,7 @@ mcp = FastMCP("My MCP Server", stateless_http=True)
 )
 async def property_search() -> CallToolResult:
     """Search for real estate properties based on user criteria."""
-    await asyncio.sleep(10)
+    await asyncio.sleep(15)
     return CallToolResult(
         content=[TextContent(type="text", text="Hello from FastMCP!")],
         _meta={
@@ -25,7 +25,8 @@ async def property_search() -> CallToolResult:
     )
 
 @mcp.resource("ui://property_search.html", mime_type="text/html+skybridge")
-def property_search_html():
+async def property_search_html():
+    await asyncio.sleep(5)
     path = os.path.join("components", "property_search.html")
     with open(path, "r", encoding="utf-8") as f:
         return f.read()
