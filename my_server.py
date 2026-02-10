@@ -13,8 +13,9 @@ mcp = FastMCP("My MCP Server", stateless_http=True)
         "readOnlyHint": True,
     }
 )
-def property_search() -> CallToolResult:
+async def property_search() -> CallToolResult:
     """Search for real estate properties based on user criteria."""
+    await asyncio.sleep(10)
     return CallToolResult(
         content=[TextContent(type="text", text="Hello from FastMCP!")],
         _meta={
