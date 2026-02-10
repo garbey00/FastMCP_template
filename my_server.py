@@ -31,7 +31,7 @@ def property_search_html():
 
 
 async def main():
-    await mcp.run_async()
+    await mcp.run_async(transport="http", stateless_http=True)
 
 if __name__ == "__main__":
     asyncio.run(main())
