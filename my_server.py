@@ -1,6 +1,7 @@
 import asyncio
 from fastmcp import FastMCP
 from mcp.types import CallToolResult
+import os
 
 mcp = FastMCP("My MCP Server")
 
