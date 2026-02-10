@@ -1,6 +1,6 @@
 import asyncio
 from fastmcp import FastMCP
-from mcp.types import CallToolResult
+from mcp.types import CallToolResult, TextContent
 import os
 
 mcp = FastMCP("My MCP Server")
@@ -16,6 +16,7 @@ mcp = FastMCP("My MCP Server")
 def property_search() -> CallToolResult:
     """Search for real estate properties based on user criteria."""
     return CallToolResult(
+        content=[TextContent(type="text", text="Hello from FastMCP!")],
         _meta={
             "openai/toolInvocation/invoking": "Searching properties…",
             "openai/toolInvocation/invoked": "Properties found.",
