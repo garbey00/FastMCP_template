@@ -3,7 +3,7 @@ from fastmcp import FastMCP
 from mcp.types import CallToolResult, TextContent
 import os
 
-mcp = FastMCP("My MCP Server")
+mcp = FastMCP("My MCP Server", stateless_http=True)
 
 @mcp.tool(
     meta={
